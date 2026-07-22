@@ -8,6 +8,8 @@ const couplets = [
 
 const arabicNumbers = new Intl.NumberFormat("ar-EG");
 const poemElement = document.querySelector("#poem");
+const speedButton = document.querySelector("#speedButton");
+const speedLabel = document.querySelector("#speedLabel");
 const repeatButton = document.querySelector("#repeatButton");
 const repeatLabel = document.querySelector("#repeatLabel");
 const repeatCountInput = document.querySelector("#repeatCount");
@@ -22,6 +24,7 @@ const completion = document.querySelector("#completion");
 let activeAudio = null;
 let activeButton = null;
 let soundEnabled = true;
+let slowEnabled = false;
 let repeatEnabled = false;
 let repeatTimer = null;
 let playbackId = 0;
@@ -89,6 +92,8 @@ function playCouplet(index, button) {
 
   const clip = couplets[index];
   const recording = new Audio(clip.audio);
+  recording.playbackRate = slowEnabled ? 0.75 : 1;
+  recording.preservesPitch = true;
   const totalRuns = repeatEnabled ? getRepeatCount() : 1;
   let currentRun = 1;
   let runFinished = false;
@@ -147,6 +152,14 @@ function getRepeatCount() {
   const value = Number.parseInt(repeatCountInput.value, 10);
   return Math.min(20, Math.max(2, Number.isFinite(value) ? value : 5));
 }
+
+speedButton.addEventListener("click", () => {
+  slowEnabled = !slowEnabled;
+  speedButton.setAttribute("aria-pressed", String(slowEnabled));
+  speedButton.setAttribute("aria-label", slowEnabled ? "Disable slow playback" : "Enable slow playback");
+  speedLabel.textContent = slowEnabled ? "Slow speed on" : "Slow speed";
+  if (activeAudio) activeAudio.playbackRate = slowEnabled ? 0.75 : 1;
+});
 
 function updateRepeatLabel() {
   const count = getRepeatCount();

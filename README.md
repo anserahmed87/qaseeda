@@ -9,6 +9,7 @@ A child-friendly web app that helps children listen to and memorize an Arabic po
 - Configurable repeat mode, from 2 to 20 repetitions
 - Default repeat count of 5
 - Two-second pause between repetitions
+- Optional slow playback at 75% speed
 - Listening progress and completion reward
 - Responsive layout for Android tablets, phones, and computers
 - No build tools or installation required
@@ -38,6 +39,10 @@ The clips are mono MP3 files optimized for fast loading on mobile devices. The o
 ## Repeat mode
 
 Choose a repeat count between 2 and 20, then enable the **Repeat** button before selecting a couplet. The default is 5 repetitions, with a two-second pause between each playback.
+
+## Slow playback
+
+Enable **Slow speed** to play a couplet at 75% of its normal speed while preserving the speaker's pitch. The setting also works during repeated playback and can be changed while audio is playing.
 
 ## Deploy to GitHub Pages
 

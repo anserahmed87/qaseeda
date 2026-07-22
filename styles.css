@@ -34,8 +34,8 @@ button:focus-visible, a:focus-visible { outline: 4px solid #e5af52; outline-offs
 .brand { display: flex; gap: .7rem; align-items: center; color: var(--ink); font-size: 1.2rem; font-weight: 700; text-decoration: none; }
 .brand__mark { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border-radius: 50% 50% 45% 55%; color: white; background: var(--green); box-shadow: 0 6px 18px rgba(48,70,43,.2); font-size: 1.35rem; }
 .header-actions { display: flex; align-items: center; gap: .55rem; }
-.sound-button, .repeat-button { display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .55rem .9rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: rgba(255,253,248,.82); font: 700 .9rem inherit; cursor: pointer; }
-.repeat-button[aria-pressed="true"] { border-color: var(--green); color: white; background: var(--green); box-shadow: 0 5px 14px rgba(63,86,58,.22); }
+.sound-button, .repeat-button, .speed-button { display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .55rem .9rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: rgba(255,253,248,.82); font: 700 .9rem inherit; cursor: pointer; }
+.repeat-button[aria-pressed="true"], .speed-button[aria-pressed="true"] { border-color: var(--green); color: white; background: var(--green); box-shadow: 0 5px 14px rgba(63,86,58,.22); }
 .repeat-count { display: flex; align-items: center; gap: .4rem; min-height: 2.75rem; padding: .35rem .45rem .35rem .7rem; border: 1px solid var(--line); border-radius: 999px; direction: ltr; color: var(--ink); background: rgba(255,253,248,.82); font: 700 .82rem system-ui, sans-serif; }
 .repeat-count input { width: 2.8rem; height: 2rem; padding: .2rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: white; font: 700 .9rem system-ui, sans-serif; text-align: center; }
 .repeat-count input:focus-visible { outline: 3px solid #e5af52; outline-offset: 1px; }
@@ -77,7 +77,7 @@ footer { display: flex; align-items: center; justify-content: space-between; wid
 @media (max-width: 600px) {
   .site-header { align-items: flex-start; }
   .header-actions { align-items: stretch; flex-direction: column-reverse; }
-  .sound-button, .repeat-button { min-height: 2.35rem; padding: .4rem .65rem; font-size: .78rem; }
+  .sound-button, .repeat-button, .speed-button { min-height: 2.35rem; padding: .4rem .65rem; font-size: .78rem; }
   .repeat-count { justify-content: space-between; min-height: 2.35rem; }
   .hero { padding-top: 2.2rem; }
   .couplet { grid-template-columns: 2.7rem 1fr; gap: .75rem; padding: 1rem; }
