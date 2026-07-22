@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#536b4c" />
+    <title>بُستان القصيدة</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="glow glow--one" aria-hidden="true"></div>
+    <div class="glow glow--two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="الصفحة الرئيسية">
+        <span class="brand__mark" aria-hidden="true">ق</span>
+        <span>بُستان القصيدة</span>
+      </a>
+      <div class="header-actions">
+        <label class="repeat-count" for="repeatCount">
+          <span>Repeats</span>
+          <input id="repeatCount" type="number" min="2" max="20" value="5" inputmode="numeric" />
+        </label>
+        <button class="repeat-button" id="repeatButton" type="button" aria-label="Enable repeat mode" aria-pressed="false">
+          <span aria-hidden="true">↻</span>
+          <span id="repeatLabel" dir="ltr">Repeat 5 times</span>
+        </button>
+        <button class="sound-button" id="soundButton" type="button" aria-label="Turn sound off" aria-pressed="true">
+          <span id="soundIcon" aria-hidden="true">🔊</span>
+          <span id="soundLabel" dir="ltr">Sound on</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="pageTitle">
+        <p class="eyebrow">هَيَّا نَحْفَظُ مَعًا</p>
+        <h1 id="pageTitle">رِحْلَةٌ مَعَ<br /><span>القَصِيدَة</span></h1>
+        <p class="intro">اِضْغَطْ عَلَى كُلِّ بَيْتٍ، وَاسْتَمِعْ إِلَيْهِ، ثُمَّ رَدِّدْهُ.</p>
+
+        <div class="progress-wrap">
+          <div class="progress-copy">
+            <span>رِحْلَةُ الحِفْظ</span>
+            <strong id="progressText">٠ مِنْ ٥ أَبْيَات</strong>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="الأبيات التي استمعت إليها" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="poem" aria-label="أبيات القصيدة" id="poem"></section>
+
+      <section class="completion" id="completion" aria-live="polite" hidden>
+        <span aria-hidden="true">⭐</span>
+        <div><strong>أَحْسَنْتَ!</strong><br />لَقَدِ اسْتَمَعْتَ إِلَى القَصِيدَةِ كَامِلَةً.</div>
+      </section>
+
+      <section class="reading-tip" aria-label="نصيحة للحفظ">
+        <span aria-hidden="true">💡</span>
+        <p><strong>نَصِيحَةٌ لِلْحِفْظ</strong><br />اِسْتَمِعْ إِلَى البَيْتِ، ثُمَّ أَخْفِ النَّصَّ وَحَاوِلْ أَنْ تُرَدِّدَهُ وَحْدَكَ.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>صُنِعَ بِحُبٍّ لِقُرَّائِنَا الصِّغَارِ</span>
+      <span>اِسْتَمِعْ • رَدِّدْ • اِحْفَظْ</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
