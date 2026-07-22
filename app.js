@@ -1,12 +1,10 @@
 const couplets = [
-  { image: "couplets/1-text.png", start: 26, end: 43 },
-  { image: "couplets/2-text.png", start: 43, end: 61 },
-  { image: "couplets/3-text.png", start: 61, end: 82 },
-  { image: "couplets/4-text.png", start: 83, end: 104 },
-  { image: "couplets/5-text.png", start: 105, end: 128 }
+  { image: "couplets/1-text.png", audio: "couplets/1-audio.mp3" },
+  { image: "couplets/2-text.png", audio: "couplets/2-audio.mp3" },
+  { image: "couplets/3-text.png", audio: "couplets/3-audio.mp3" },
+  { image: "couplets/4-text.png", audio: "couplets/4-audio.mp3" },
+  { image: "couplets/5-text.png", audio: "couplets/5-audio.mp3" }
 ];
-
-const sourceAudio = "couplets/source-audio.webm";
 
 const arabicNumbers = new Intl.NumberFormat("ar-EG");
 const poemElement = document.querySelector("#poem");
@@ -90,7 +88,7 @@ function playCouplet(index, button) {
   button.querySelector(".couplet__play").textContent = "■";
 
   const clip = couplets[index];
-  const recording = new Audio(sourceAudio);
+  const recording = new Audio(clip.audio);
   const totalRuns = repeatEnabled ? getRepeatCount() : 1;
   let currentRun = 1;
   let runFinished = false;
@@ -112,7 +110,7 @@ function playCouplet(index, button) {
     if (playbackId !== thisPlaybackId || activeAudio !== recording) return;
     runFinished = false;
     showRunStatus();
-    recording.currentTime = clip.start;
+    recording.currentTime = 0;
     recording.play().catch(() => {
       alert("اِضْغَطْ عَلَى البَيْتِ مَرَّةً أُخْرَى لِتَشْغِيلِ الصَّوْتِ.");
       stopPlayback();
@@ -134,13 +132,6 @@ function playCouplet(index, button) {
     }, 2000);
   }
 
-  const stopAtClipEnd = () => {
-    if (recording.currentTime >= clip.end) {
-      completeRun();
-    }
-  };
-
-  recording.addEventListener("timeupdate", stopAtClipEnd);
   recording.addEventListener("ended", completeRun);
   recording.addEventListener("error", () => {
     alert("تَعَذَّرَ تَشْغِيلُ التَّسْجِيلِ الصَّوْتِيِّ.");

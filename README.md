@@ -23,17 +23,17 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000> in a browser.
 
-## Audio sections
+## Local audio clips
 
-The app uses the authorized recording at `couplets/source-audio.webm` and plays these sections:
+Each couplet has its own lightweight local MP3 file:
 
-- Couplet 1: `00:26–00:43`
-- Couplet 2: `00:43–01:01`
-- Couplet 3: `01:01–01:22`
-- Couplet 4: `01:23–01:44`
-- Couplet 5: `01:45–02:08`
+- `couplets/1-audio.mp3` — extracted from `00:26–00:43`
+- `couplets/2-audio.mp3` — extracted from `00:43–01:01`
+- `couplets/3-audio.mp3` — extracted from `01:01–01:22`
+- `couplets/4-audio.mp3` — extracted from `01:23–01:44`
+- `couplets/5-audio.mp3` — extracted from `01:45–02:08`
 
-The start and end times can be changed in the `couplets` array at the top of `app.js`.
+The clips are mono MP3 files optimized for fast loading on mobile devices. The original full-length source recording is not included in the deployed site.
 
 ## Repeat mode
 
