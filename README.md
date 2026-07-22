@@ -1,27 +1,46 @@
-# بُستان القصيدة
+# Qaseeda — Arabic Poem Learning App
 
-تطبيق عربي بسيط يساعد الأطفال على الاستماع إلى أبيات القصيدة وحفظها.
+A child-friendly web app that helps children listen to and memorize an Arabic poem. Children can click any couplet to hear its matching recitation.
 
-## التشغيل
+## Features
+
+- Five Arabic couplets displayed as images
+- Recorded audio synchronized with each couplet
+- Configurable repeat mode, from 2 to 20 repetitions
+- Default repeat count of 5
+- Two-second pause between repetitions
+- Listening progress and completion reward
+- Responsive layout for Android tablets, phones, and computers
+- No build tools or installation required
+
+## Run locally
+
+From the project folder, run:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-ثم افتح <http://localhost:8000>.
+Then open <http://localhost:8000> in a browser.
 
-## التسجيل الصوتي
+## Audio sections
 
-يستخدم التطبيق الملف المرخّص `couplets/source-audio.webm`، ويشغّل منه المقاطع التالية:
+The app uses the authorized recording at `couplets/source-audio.webm` and plays these sections:
 
-- البيت ١: `00:26–00:43`
-- البيت ٢: `00:43–01:01`
-- البيت ٣: `01:01–01:22`
-- البيت ٤: `01:23–01:44`
-- البيت ٥: `01:45–02:08`
+- Couplet 1: `00:26–00:43`
+- Couplet 2: `00:43–01:01`
+- Couplet 3: `01:01–01:22`
+- Couplet 4: `01:23–01:44`
+- Couplet 5: `01:45–02:08`
 
-يمكن تعديل بدايات المقاطع ونهاياتها في قائمة `couplets` الموجودة أعلى ملف `app.js`.
+The start and end times can be changed in the `couplets` array at the top of `app.js`.
 
-يمكن اختيار عدد مرات التكرار من `2` إلى `20`، والقيمة الافتراضية هي `5`. عند تفعيل زر التكرار، يُشغَّل البيت بالعدد المختار مع استراحة مدتها ثانيتان بين كل تشغيل.
+## Repeat mode
 
-صور الأبيات الموجودة حاليًا هي `1-text.png` إلى `5-text.png`. لإضافة بيت جديد، أضف صورته وتسجيله ثم أضف بياناته إلى قائمة `couplets` في `app.js`.
+Choose a repeat count between 2 and 20, then enable the **Repeat** button before selecting a couplet. The default is 5 repetitions, with a two-second pause between each playback.
+
+## Deploy to GitHub Pages
+
+The repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`. Every push to the `main` branch automatically deploys the website to GitHub Pages.
+
+In the GitHub repository, open **Settings → Pages** and select **GitHub Actions** as the deployment source.
