@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#536b4c" />
-    <title>Poem Garden</title>
+    <title>Arabic Qaseedah – Ya aina fazillahi</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,11 +12,28 @@
     <div class="glow glow--two" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Poem Garden home">
+      <a class="brand" href="#top" aria-label="Arabic Qaseedah home">
         <span class="brand__mark" aria-hidden="true">🌱</span>
-        <span>Poem Garden</span>
+        <span>My Qaseedah</span>
       </a>
-      <div class="header-actions">
+      <span class="header-badge">Arabic poem time ✨</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="pageTitle">
+        <p class="eyebrow">LISTEN • REPEAT • LEARN</p>
+        <h1 id="pageTitle">Arabic Qaseedah<br /><span>Ya aina fazillahi</span></h1>
+        <p class="intro">Pick a couplet, listen carefully, and say it out loud! 🎵</p>
+
+        <section class="learning-tools" aria-labelledby="toolsTitle">
+          <div class="tools-heading">
+            <span aria-hidden="true">🎧</span>
+            <div>
+              <h2 id="toolsTitle">My listening tools</h2>
+              <p>Choose how you would like to practise.</p>
+            </div>
+          </div>
+          <div class="header-actions">
         <button class="speed-button" id="speedButton" type="button" aria-label="Turn slow and clear mode on" aria-pressed="false">
           <span aria-hidden="true">🐢</span>
           <span id="speedLabel">Slow &amp; clear</span>
@@ -33,14 +50,8 @@
           <span id="soundIcon" aria-hidden="true">🔊</span>
           <span id="soundLabel">Sound on</span>
         </button>
-      </div>
-    </header>
-
-    <main id="top">
-      <section class="hero" aria-labelledby="pageTitle">
-        <p class="eyebrow">LET'S LEARN TOGETHER!</p>
-        <h1 id="pageTitle">Listen, Repeat<br /><span>&amp; Remember</span></h1>
-        <p class="intro">Tap a poem card, listen carefully, and say it out loud! 🎵</p>
+          </div>
+        </section>
 
         <div class="progress-wrap">
           <div class="progress-copy">
@@ -53,6 +64,10 @@
         </div>
       </section>
 
+      <div class="section-title">
+        <span aria-hidden="true">👇</span>
+        <div><strong>Choose a couplet</strong><small>Tap a card to start listening</small></div>
+      </div>
       <section class="poem" aria-label="Poem couplets" id="poem"></section>
 
       <section class="completion" id="completion" aria-live="polite" hidden>
