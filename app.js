@@ -6,7 +6,6 @@ const couplets = [
   { image: "couplets/5-text.png", audio: "couplets/5-audio.mp3" }
 ];
 
-const arabicNumbers = new Intl.NumberFormat("ar-EG");
 const poemElement = document.querySelector("#poem");
 const speedButton = document.querySelector("#speedButton");
 const speedLabel = document.querySelector("#speedLabel");
@@ -33,8 +32,8 @@ const completed = new Set();
 function renderCouplets() {
   poemElement.innerHTML = couplets.map((couplet, index) => `
     <button class="couplet" type="button" data-index="${index}" aria-label="Play couplet ${index + 1}">
-      <span class="couplet__number">${arabicNumbers.format(index + 1)}</span>
-      <img class="couplet__image" src="${couplet.image}" alt="نص البيت ${arabicNumbers.format(index + 1)}" />
+      <span class="couplet__number">${index + 1}</span>
+      <img class="couplet__image" src="${couplet.image}" alt="Arabic text for couplet ${index + 1}" />
       <span class="couplet__play" aria-hidden="true">▶</span>
       <span class="couplet__repetition" aria-live="polite"></span>
     </button>
