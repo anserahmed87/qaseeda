@@ -34,7 +34,7 @@ function renderCouplets() {
     <button class="couplet" type="button" data-index="${index}" aria-label="Play couplet ${index + 1}">
       <span class="couplet__number">${index + 1}</span>
       <img class="couplet__image" src="${couplet.image}" alt="Arabic text for couplet ${index + 1}" />
-      <span class="couplet__play" aria-hidden="true">🔊</span>
+      <span class="couplet__play" aria-hidden="true">▶</span>
       <span class="couplet__repetition" aria-live="polite"></span>
     </button>
   `).join("");
@@ -55,7 +55,7 @@ function stopPlayback() {
   }
   if (activeButton) {
     activeButton.classList.remove("is-playing");
-    activeButton.querySelector(".couplet__play").textContent = "🔊";
+    activeButton.querySelector(".couplet__play").textContent = "▶";
     activeButton.querySelector(".couplet__repetition").textContent = "";
   }
   activeAudio = null;
