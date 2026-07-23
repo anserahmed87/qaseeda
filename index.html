@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#536b4c" />
-    <title>بُستان القصيدة</title>
+    <title>Poem Garden</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,63 +12,63 @@
     <div class="glow glow--two" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="الصفحة الرئيسية">
-        <span class="brand__mark" aria-hidden="true">ق</span>
-        <span>بُستان القصيدة</span>
+      <a class="brand" href="#top" aria-label="Poem Garden home">
+        <span class="brand__mark" aria-hidden="true">🌱</span>
+        <span>Poem Garden</span>
       </a>
       <div class="header-actions">
-        <button class="speed-button" id="speedButton" type="button" aria-label="Enable slow playback" aria-pressed="false">
+        <button class="speed-button" id="speedButton" type="button" aria-label="Turn slow and clear mode on" aria-pressed="false">
           <span aria-hidden="true">🐢</span>
-          <span id="speedLabel" dir="ltr">Slow speed</span>
+          <span id="speedLabel">Slow &amp; clear</span>
         </button>
         <label class="repeat-count" for="repeatCount">
-          <span>Repeats</span>
+          <span>Repeat how many?</span>
           <input id="repeatCount" type="number" min="2" max="20" value="5" inputmode="numeric" />
         </label>
-        <button class="repeat-button" id="repeatButton" type="button" aria-label="Enable repeat mode" aria-pressed="false">
-          <span aria-hidden="true">↻</span>
-          <span id="repeatLabel" dir="ltr">Repeat 5 times</span>
+        <button class="repeat-button" id="repeatButton" type="button" aria-label="Turn repeat mode on" aria-pressed="false">
+          <span aria-hidden="true">🔁</span>
+          <span id="repeatLabel">Repeat 5 times</span>
         </button>
         <button class="sound-button" id="soundButton" type="button" aria-label="Turn sound off" aria-pressed="true">
           <span id="soundIcon" aria-hidden="true">🔊</span>
-          <span id="soundLabel" dir="ltr">Sound on</span>
+          <span id="soundLabel">Sound on</span>
         </button>
       </div>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="pageTitle">
-        <p class="eyebrow">هَيَّا نَحْفَظُ مَعًا</p>
-        <h1 id="pageTitle">رِحْلَةٌ مَعَ<br /><span>القَصِيدَة</span></h1>
-        <p class="intro">اِضْغَطْ عَلَى كُلِّ بَيْتٍ، وَاسْتَمِعْ إِلَيْهِ، ثُمَّ رَدِّدْهُ.</p>
+        <p class="eyebrow">LET'S LEARN TOGETHER!</p>
+        <h1 id="pageTitle">Listen, Repeat<br /><span>&amp; Remember</span></h1>
+        <p class="intro">Tap a poem card, listen carefully, and say it out loud! 🎵</p>
 
         <div class="progress-wrap">
           <div class="progress-copy">
-            <span>رِحْلَةُ الحِفْظ</span>
-            <strong id="progressText">٠ مِنْ ٥ أَبْيَات</strong>
+            <span>Your poem journey</span>
+            <strong id="progressText">0 of 5 listened</strong>
           </div>
-          <div class="progress-track" role="progressbar" aria-label="الأبيات التي استمعت إليها" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+          <div class="progress-track" role="progressbar" aria-label="Couplets listened to" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
             <div class="progress-fill" id="progressFill"></div>
           </div>
         </div>
       </section>
 
-      <section class="poem" aria-label="أبيات القصيدة" id="poem"></section>
+      <section class="poem" aria-label="Poem couplets" id="poem"></section>
 
       <section class="completion" id="completion" aria-live="polite" hidden>
         <span aria-hidden="true">⭐</span>
-        <div><strong>أَحْسَنْتَ!</strong><br />لَقَدِ اسْتَمَعْتَ إِلَى القَصِيدَةِ كَامِلَةً.</div>
+        <div><strong>Fantastic work!</strong><br />You listened to the whole poem! 🎉</div>
       </section>
 
-      <section class="reading-tip" aria-label="نصيحة للحفظ">
+      <section class="reading-tip" aria-label="Learning tip">
         <span aria-hidden="true">💡</span>
-        <p><strong>نَصِيحَةٌ لِلْحِفْظ</strong><br />اِسْتَمِعْ إِلَى البَيْتِ، ثُمَّ أَخْفِ النَّصَّ وَحَاوِلْ أَنْ تُرَدِّدَهُ وَحْدَكَ.</p>
+        <p><strong>Little learner tip</strong><br />Listen with your finger on the words. Then try saying the line all by yourself!</p>
       </section>
     </main>
 
     <footer>
-      <span>صُنِعَ بِحُبٍّ لِقُرَّائِنَا الصِّغَارِ</span>
-      <span>اِسْتَمِعْ • رَدِّدْ • اِحْفَظْ</span>
+      <span>Made with care for little learners 💛</span>
+      <span>Listen • Repeat • Remember</span>
     </footer>
 
     <script src="app.js"></script>

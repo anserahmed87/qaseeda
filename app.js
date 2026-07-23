@@ -67,7 +67,7 @@ function markComplete(index, button) {
   completed.add(index);
   button.classList.add("is-complete");
   button.querySelector(".couplet__number").textContent = "✓";
-  progressText.textContent = `${arabicNumbers.format(completed.size)} مِنْ ${arabicNumbers.format(couplets.length)} أَبْيَات`;
+  progressText.textContent = `${completed.size} of ${couplets.length} listened`;
   progressFill.style.width = `${completed.size / couplets.length * 100}%`;
   progressTrack.setAttribute("aria-valuenow", completed.size);
   completion.hidden = completed.size !== couplets.length;
@@ -107,8 +107,8 @@ function playCouplet(index, button) {
       return;
     }
     status.textContent = waiting
-      ? `Wait 2 seconds… ${currentRun}/${totalRuns}`
-      : `Repeat ${currentRun}/${totalRuns}`;
+      ? `Tiny break… ${currentRun}/${totalRuns}`
+      : `Playing ${currentRun} of ${totalRuns}`;
   }
 
   function playCurrentRun() {
@@ -117,7 +117,7 @@ function playCouplet(index, button) {
     showRunStatus();
     recording.currentTime = 0;
     recording.play().catch(() => {
-      alert("اِضْغَطْ عَلَى البَيْتِ مَرَّةً أُخْرَى لِتَشْغِيلِ الصَّوْتِ.");
+      alert("Tap the poem card again to play the sound.");
       stopPlayback();
     });
   }
@@ -139,7 +139,7 @@ function playCouplet(index, button) {
 
   recording.addEventListener("ended", completeRun);
   recording.addEventListener("error", () => {
-    alert("تَعَذَّرَ تَشْغِيلُ التَّسْجِيلِ الصَّوْتِيِّ.");
+    alert("Oops! The sound could not play. Please try again.");
     stopPlayback();
   }, { once: true });
   recording.addEventListener("loadedmetadata", () => {
@@ -156,8 +156,8 @@ function getRepeatCount() {
 speedButton.addEventListener("click", () => {
   slowEnabled = !slowEnabled;
   speedButton.setAttribute("aria-pressed", String(slowEnabled));
-  speedButton.setAttribute("aria-label", slowEnabled ? "Disable slow playback" : "Enable slow playback");
-  speedLabel.textContent = slowEnabled ? "Slow speed on" : "Slow speed";
+  speedButton.setAttribute("aria-label", slowEnabled ? "Turn slow and clear mode off" : "Turn slow and clear mode on");
+  speedLabel.textContent = slowEnabled ? "Slow mode on ✓" : "Slow & clear";
   if (activeAudio) activeAudio.playbackRate = slowEnabled ? 0.75 : 1;
 });
 
@@ -172,7 +172,7 @@ repeatCountInput.addEventListener("change", updateRepeatLabel);
 repeatButton.addEventListener("click", () => {
   repeatEnabled = !repeatEnabled;
   repeatButton.setAttribute("aria-pressed", String(repeatEnabled));
-  repeatButton.setAttribute("aria-label", repeatEnabled ? "Disable repeat mode" : "Enable repeat mode");
+  repeatButton.setAttribute("aria-label", repeatEnabled ? "Turn repeat mode off" : "Turn repeat mode on");
   updateRepeatLabel();
 });
 

@@ -22,7 +22,7 @@ body {
     radial-gradient(circle at 9% 14%, rgba(200, 144, 57, .13), transparent 19rem),
     radial-gradient(circle at 91% 30%, rgba(83, 107, 76, .12), transparent 22rem),
     linear-gradient(180deg, #f2eee3 0, var(--cream) 36rem, #fffdf8 100%);
-  font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  font-family: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
 }
 button, a { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible { outline: 4px solid #e5af52; outline-offset: 3px; }
@@ -47,7 +47,7 @@ main { width: min(100% - 2rem, 790px); margin: 0 auto; }
 h1 { margin: 0; font-size: clamp(2.8rem, 9vw, 5rem); line-height: 1.08; font-weight: 700; }
 h1 span { color: var(--green); }
 .intro { margin: 1.2rem auto 2.4rem; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
-.progress-wrap { width: min(100%, 550px); margin: auto; text-align: right; }
+.progress-wrap { width: min(100%, 550px); margin: auto; text-align: left; }
 .progress-copy { display: flex; justify-content: space-between; margin-bottom: .55rem; color: var(--muted); font-size: .9rem; }
 .progress-copy strong { color: var(--green); }
 .progress-track { height: .68rem; overflow: hidden; border-radius: 99px; background: #ded9cc; }
@@ -56,7 +56,7 @@ h1 span { color: var(--green); }
 .couplet {
   position: relative; display: grid; grid-template-columns: 3.2rem 1fr 3.3rem; gap: 1rem; align-items: center;
   width: 100%; min-height: 10rem; padding: 1.25rem; border: 2px solid transparent; border-radius: 1.6rem;
-  color: var(--ink); background: var(--card); box-shadow: 0 9px 28px rgba(54,59,43,.09); text-align: right; cursor: pointer;
+  color: var(--ink); background: var(--card); box-shadow: 0 9px 28px rgba(54,59,43,.09); text-align: left; cursor: pointer;
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 .couplet:hover { transform: translateY(-3px); box-shadow: 0 15px 34px rgba(54,59,43,.14); }
